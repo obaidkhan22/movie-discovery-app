@@ -17,11 +17,11 @@ const DarkModeSwitch = () => {
   );
   return (
     <Button
+      fontSize="12px"
       marginTop="4px"
       marginRight={1}
       onClick={toggleColorMode}
       fontWeight="bold"
-      color="gray.400"
       borderRadius={20}
     >
       {colorMode === "dark" ? darkMode : lightMode}
