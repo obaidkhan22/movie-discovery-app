@@ -1,21 +1,15 @@
-import { Heading, List, ListItem } from "@chakra-ui/react";
 import GenresList from "./GenresList";
+import MovieCategories from "./MovieCategories";
+import { Box, Divider } from "@chakra-ui/react";
 
 const SideBar = () => {
-  const categories = [
-    { id: 1, categoray: "Popular" },
-    { id: 2, categoray: "Top Rated" },
-    { id: 3, categoray: "Upcoming" },
-  ];
   return (
     <>
-      <Heading fontSize="medium">Categories</Heading>
-      <List>
-        {categories.map((c) => (
-          <ListItem key={c.id}>{c.categoray}</ListItem>
-        ))}
-      </List>
-      <GenresList />
+      <Box padding={5}>
+        <MovieCategories />
+        <Divider width={130} marginTop={4} marginBottom={3} />
+        <GenresList />
+      </Box>
     </>
   );
 };
