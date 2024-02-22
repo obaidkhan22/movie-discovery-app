@@ -7,4 +7,5 @@ export interface Movie {
 export interface FetchResponseMovie {
   page: number;
   results: Movie[];
+  total_pages: number;
 }
