@@ -1,4 +1,5 @@
 import { Heading, List, ListItem } from "@chakra-ui/react";
+import GenresList from "./GenresList";
 
 const SideBar = () => {
   const categories = [
@@ -14,7 +15,7 @@ const SideBar = () => {
           <ListItem key={c.id}>{c.categoray}</ListItem>
         ))}
       </List>
-      <Heading fontSize="medium">Genres</Heading>
+      <GenresList />
     </>
   );
 };
