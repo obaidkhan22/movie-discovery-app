@@ -1,7 +1,4 @@
 import axios from "axios";
-interface FetchResponse<T> {
-  genres: T[];
-}
 const axiosInstance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: {
@@ -16,9 +13,7 @@ class APIClient<T> {
   }
 
   getAll = () => {
-    return axiosInstance
-      .get<FetchResponse<T>>(this.endPoint)
-      .then((res) => res.data);
+    return axiosInstance.get<T>(this.endPoint).then((res) => res.data);
   };
 }
 
