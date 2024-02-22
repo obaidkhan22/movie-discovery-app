@@ -19,7 +19,7 @@ function App() {
           <SideBar />
         </GridItem>
       </Show>
-      <GridItem area="main" bg="blue">
+      <GridItem area="main">
         <MovieGrid />
       </GridItem>
     </Grid>
