@@ -1,7 +1,9 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
-import useMovieQueryStore from "../hooks/store";
+import useMovieQueryStore from "../../hooks/store";
+import "./styles.css";
+
 const SearchInput = () => {
   const setSearchText = useMovieQueryStore((s) => s.setSearchText);
   const ref = useRef<HTMLInputElement>(null);
@@ -9,14 +11,14 @@ const SearchInput = () => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current?.value) setSearchText(ref.current.value);
+        if (ref.current) setSearchText(ref.current.value);
       }}
     >
       <InputGroup>
         <InputLeftElement children={<BsSearch />} />
         <Input
           ref={ref}
-          placeholder="Search movies..."
+          placeholder={`Search movies...`}
           variant="filled"
           borderRadius={30}
         />

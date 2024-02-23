@@ -2,7 +2,7 @@ import { HStack, Image, Stack, Text } from "@chakra-ui/react";
 import logo from "../images/logo.png";
 import DarkModeSwitch from "./DarkModeSwitch";
 import UserSignUp from "./UserSignUp";
-import SearchInput from "./SearchInput";
+import SearchInput from "./searchInput/SearchInput";
 const NavBar = () => {
   return (
     <nav>
