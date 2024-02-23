@@ -1,16 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 import { FetchResponseMovie } from "../entities/FetchResponseMovies";
+import getEndPoint from "../services/getEndPoint";
 import useMovieQueryStore from "./store";
+import { useQuery } from "@tanstack/react-query";
 const useMovies = () => {
-  const page = useMovieQueryStore((s) => s.movieQuery.page);
-  console.log(page);
-
-  const apiClient = new APIClient<FetchResponseMovie>(
-    `/discover/movie?page=${page}`
-  );
+  const movieQuery = useMovieQueryStore((s) => s.movieQuery);
+  const endpoint = getEndPoint();
+  const apiClient = new APIClient<FetchResponseMovie>(endpoint);
   return useQuery({
-    queryKey: ["movies", page],
+    queryKey: ["movies", movieQuery],
     queryFn: apiClient.getAll,
   });
 };

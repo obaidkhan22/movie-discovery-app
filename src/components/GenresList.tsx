@@ -1,7 +1,8 @@
-import { HStack, Heading, Image, List, ListItem } from "@chakra-ui/react";
-
+import { HStack, Heading, Image, Link, List, ListItem } from "@chakra-ui/react";
 import genres from "../data/genres";
+import useMovieQueryStore from "../hooks/store";
 const GenresList = () => {
+  const setGenreId = useMovieQueryStore((s) => s.setGenreId);
   return (
     <>
       <Heading fontSize={24}>Genres</Heading>
@@ -15,7 +16,7 @@ const GenresList = () => {
               objectFit="cover"
             />
             <ListItem fontSize="17px" key={genre.id}>
-              {genre.name}
+              <Link onClick={() => setGenreId(genre.id)}>{genre.name}</Link>
             </ListItem>
           </HStack>
         ))}
