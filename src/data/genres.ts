@@ -16,7 +16,7 @@ const genres = {
       id: 16,
       name: "Animation",
       image_background:
-        "https://i.pinimg.com/474x/3c/3d/0d/3c3d0d04975e09ffe15d368af8d0f36c.jpg",
+        "https://i.pinimg.com/474x/1d/c8/09/1dc8098df672a11367e754fc01ac5f0e.jpg",
     },
     {
       id: 35,
