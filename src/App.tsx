@@ -1,8 +1,9 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import MovieGrid from "./components/MovieGrid";
 import MovieHeading from "./components/MovieHeading";
+import SortOrderSelector from "./components/SortOrderSelector";
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" padding={5}>
-        <MovieHeading />
+        <HStack justifyContent="space-between" marginBottom={4}>
+          <MovieHeading />
+          <SortOrderSelector />
+        </HStack>
         <MovieGrid />
       </GridItem>
     </Grid>
