@@ -6,7 +6,14 @@ interface Props {
 }
 const MovieCard = ({ movie }: Props) => {
   return (
-    <Card borderRadius={10} overflow={"hidden"}>
+    <Card
+      _hover={{
+        transform: "scale(1.07)",
+        transition: "transform .2s ease-in",
+      }}
+      borderRadius={10}
+      overflow={"hidden"}
+    >
       <Image src={getImageURL(movie.poster_path)} />
       <CardBody>
         <Heading fontSize={20}>{movie.title}</Heading>

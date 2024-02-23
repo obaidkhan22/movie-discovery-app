@@ -22,6 +22,7 @@ function App() {
       </Show>
       <GridItem area="main">
         <MovieGrid />
+        <Pagination />
       </GridItem>
     </Grid>
   );
