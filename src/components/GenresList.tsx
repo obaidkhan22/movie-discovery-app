@@ -8,7 +8,9 @@ const GenresList = () => {
   const selectedGenre = useGenre(genreId);
   return (
     <>
-      <Heading fontSize={24}>Genres</Heading>
+      <Heading fontSize={24} color="gray.400" paddingBottom={2}>
+        Genres
+      </Heading>
       <List>
         {genres.map((genre) => (
           <HStack marginY={2}>

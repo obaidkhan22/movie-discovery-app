@@ -6,7 +6,9 @@ const MovieHeading = () => {
   const genreId = useMovieQueryStore((s) => s.movieQuery.genreId);
   const selectedGenre = useGenre(genreId);
   return (
-    <Heading marginBottom={5}>{`${selectedGenre?.name || ""} Movies`}</Heading>
+    <Heading marginBottom={5} color="gray.400">{`${
+      selectedGenre?.name || ""
+    } Movies`}</Heading>
   );
 };
 

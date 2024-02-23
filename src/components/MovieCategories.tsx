@@ -8,7 +8,7 @@ const categories = [
 const MovieCategories = () => {
   return (
     <>
-      <Heading fontSize={24} marginY={2}>
+      <Heading fontSize={24} marginY={2} color="gray.400">
         Categories
       </Heading>
       <List>

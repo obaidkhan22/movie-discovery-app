@@ -3,15 +3,16 @@ import { BsSun, BsMoon } from "react-icons/bs";
 
 const DarkModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const color = "gray.400";
   const lightMode = (
     <HStack>
-      <Text>Light Mode</Text>
+      <Text color={color}>Light Mode</Text>
       <Icon as={BsSun} />
     </HStack>
   );
   const darkMode = (
     <HStack>
-      <Text>Dark Mode</Text>
+      <Text color={color}>Dark Mode</Text>
       <Icon as={BsMoon} />
     </HStack>
   );
