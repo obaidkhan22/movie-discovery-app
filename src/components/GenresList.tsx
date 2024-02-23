@@ -7,7 +7,7 @@ const GenresList = () => {
     <>
       <Heading fontSize={24}>Genres</Heading>
       <List>
-        {genres.genres.map((genre) => (
+        {genres.map((genre) => (
           <HStack marginY={2}>
             <Image
               src={genre.image_background}

@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import MovieGrid from "./components/MovieGrid";
 import Pagination from "./components/Pagination";
+import MovieHeading from "./components/MovieHeading";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <SideBar />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem area="main" padding={5}>
+        <MovieHeading />
         <MovieGrid />
         <Pagination />
       </GridItem>
