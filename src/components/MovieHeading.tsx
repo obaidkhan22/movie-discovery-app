@@ -1,14 +1,16 @@
 import { Heading } from "@chakra-ui/react";
 import useMovieQueryStore from "../hooks/store";
 import useGenre from "../hooks/useGenre";
+import getCapitalizedWord from "../services/getCapitalizedWord";
 
 const MovieHeading = () => {
-  const genreId = useMovieQueryStore((s) => s.movieQuery.genreId);
-  const selectedGenre = useGenre(genreId);
+  const movieQuery = useMovieQueryStore((s) => s.movieQuery);
+  const selectedGenre = useGenre(movieQuery.genreId);
+  const capitalizedWord = getCapitalizedWord(movieQuery.searchText);
   return (
-    <Heading color="gray.400" marginBottom={5}>{`${
-      selectedGenre?.name || ""
-    } Movies`}</Heading>
+    <Heading color="gray.400" marginBottom={5}>{`${selectedGenre?.name || ""} ${
+      capitalizedWord || "Movies"
+    }`}</Heading>
   );
 };
 

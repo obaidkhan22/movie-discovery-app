@@ -17,7 +17,9 @@ interface MovieQueryStore {
 const useMovieQueryStore = create<MovieQueryStore>((set) => ({
   movieQuery: { page: 1 },
   setGenreId: (genreId) =>
-    set((store) => ({ movieQuery: { ...store.movieQuery, genreId, page: 1 } })),
+    set((store) => ({
+      movieQuery: { ...store.movieQuery, genreId, page: 1, searchText: "" },
+    })),
   setSearchText: (searchText) =>
     set(() => ({ movieQuery: { searchText, page: 1 } })),
   nextPage: (currentPage) =>
