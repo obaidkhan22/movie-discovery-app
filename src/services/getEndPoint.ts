@@ -5,7 +5,7 @@ const getEndPoint = () => {
   if (movieQuery.genreId)
     return `/discover/movie?with_genres=${movieQuery.genreId}&page=${movieQuery.page}`;
   if (movieQuery.searchText)
-    return `/search/movie?query=${movieQuery.searchText}&page=1&
+    return `/search/movie?query=${movieQuery.searchText}&page=${movieQuery.page}&
     `;
   return `/discover/movie?page=${movieQuery.page}`;
 };
