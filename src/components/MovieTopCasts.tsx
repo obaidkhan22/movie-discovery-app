@@ -6,16 +6,15 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
 import useCredits from "../hooks/useCredits";
 import getImageURL from "../services/getImageURL";
 import React from "react";
-
-const MovieTopCasts = () => {
-  const { id } = useParams();
-  const { data, error } = useCredits(id!);
+interface Props {
+  movie_id: number;
+}
+const MovieTopCasts = ({ movie_id }: Props) => {
+  const { data, error } = useCredits(movie_id!);
   const slicedArray = data?.cast.slice(0, 10);
-
   if (error) return null;
   return (
     <Box>

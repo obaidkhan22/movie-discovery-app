@@ -30,7 +30,6 @@ const MovieAttributes = ({ movie }: Props) => {
           <MovieRating rating={movie.vote_average.toFixed(2)} />
         </DefinitionItem>
       </SimpleGrid>
-      <MovieTopCasts />
     </>
   );
 };
