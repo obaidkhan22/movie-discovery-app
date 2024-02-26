@@ -9,6 +9,7 @@ export interface Movie {
   release_date: string;
   genres: Genre[];
   runtime: string;
+  original_language: string;
 }
 
 export interface FetchResponseMovie {

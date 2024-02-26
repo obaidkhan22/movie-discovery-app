@@ -1,7 +1,8 @@
 import { Movie } from "../entities/FetchResponseMovies";
-import { HStack, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import DefinitionItem from "./DefinitionItem";
 import getDurationByHour from "../services/getDurationByHour";
+import MovieRating from "./MovieRating";
 interface Props {
   movie: Movie;
 }
@@ -20,6 +21,12 @@ const MovieAttributes = ({ movie }: Props) => {
         </DefinitionItem>
         <DefinitionItem term="Duration">
           <Text>{getDurationByHour(movie.runtime)}</Text>
+        </DefinitionItem>
+        <DefinitionItem term="Language">
+          <Text>{movie.original_language}</Text>
+        </DefinitionItem>
+        <DefinitionItem term="Rating">
+          <MovieRating rating={movie.vote_average.toFixed(2)} />
         </DefinitionItem>
       </SimpleGrid>
     </>
