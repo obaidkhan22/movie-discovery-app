@@ -2,6 +2,7 @@ import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
 import { Movie } from "../entities/FetchResponseMovies";
 import getImageURL from "../services/getImageURL";
 import MovieRating from "./MovieRating";
+import { Link } from "react-router-dom";
 interface Props {
   movie: Movie;
 }
@@ -18,7 +19,9 @@ const MovieCard = ({ movie }: Props) => {
       <Image src={getImageURL(movie.poster_path)} />
       <CardBody>
         <HStack justifyContent="space-between">
-          <Heading fontSize={20}>{movie.title}</Heading>
+          <Heading fontSize={20}>
+            <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
+          </Heading>
           <MovieRating rating={movie.vote_average.toFixed(2)} />
         </HStack>
       </CardBody>

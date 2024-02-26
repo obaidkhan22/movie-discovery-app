@@ -13,7 +13,7 @@ const GenresList = () => {
       </Heading>
       <List>
         {genres.map((genre) => (
-          <HStack marginY={2}>
+          <HStack marginY={2} key={genre.id}>
             <Image
               src={genre.image_background}
               boxSize={10}
