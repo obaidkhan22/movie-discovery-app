@@ -21,7 +21,11 @@ const MovieTopCasts = ({ movie_id }: Props) => {
       <Heading color="gray.600" fontSize={20} marginTop={2}>
         Top Casts
       </Heading>
-      <SimpleGrid columns={8} paddingY={5}>
+      <SimpleGrid
+        columns={{ base: 4, sm: 6, md: 8, lg: 6, xl: 10 }}
+        paddingY={5}
+        spacing={2}
+      >
         {slicedArray?.map((cast) => (
           <React.Fragment key={cast.id}>
             {cast.profile_path && (

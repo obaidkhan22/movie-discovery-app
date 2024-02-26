@@ -12,7 +12,7 @@ const Layout = () => {
       <Grid
         templateAreas={{
           base: `"nav" "main"`,
-          lg: ` "nav nav" "aside main"`,
+          md: ` "nav nav" "aside main"`,
         }}
         templateColumns={{
           base: "1fr",
@@ -22,7 +22,7 @@ const Layout = () => {
         <GridItem area="nav">
           <NavBar />
         </GridItem>
-        <Show above="lg">
+        <Show breakpoint="(min-width: 768px)">
           <GridItem area="aside">
             <SideBar />
           </GridItem>

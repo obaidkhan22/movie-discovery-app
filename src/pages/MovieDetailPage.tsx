@@ -12,19 +12,21 @@ const MovieDetailPage = () => {
   return data ? (
     <>
       <SimpleGrid
-        columns={{ sm: 1, md: 2 }}
+        columns={{ base: 1, md: 1, lg: 2 }}
         templateColumns={{
           base: "1fr",
+          md: "1fr",
           lg: "400px 1fr",
         }}
       >
-        <Image
-          src={getImageURL(data.poster_path)}
-          borderRadius={20}
-          marginLeft={10}
-          boxShadow="dark-lg"
-          height={500}
-        />
+        <Box justifySelf="center">
+          <Image
+            src={getImageURL(data.poster_path)}
+            borderRadius={20}
+            boxShadow="dark-lg"
+            height={500}
+          />
+        </Box>
         <Box justifySelf={"center"}>
           <MovieAttributes movie={data} />
           <MovieTopCasts movie_id={data.id} />
