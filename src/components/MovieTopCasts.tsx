@@ -9,6 +9,7 @@ import {
 import { useParams } from "react-router-dom";
 import useCredits from "../hooks/useCredits";
 import getImageURL from "../services/getImageURL";
+import React from "react";
 
 const MovieTopCasts = () => {
   const { id } = useParams();
@@ -23,14 +24,18 @@ const MovieTopCasts = () => {
       </Heading>
       <SimpleGrid columns={8} paddingY={5}>
         {slicedArray?.map((cast) => (
-          <VStack key={cast.id} marginX={3}>
-            <Avatar
-              src={getImageURL(cast.profile_path)}
-              size="lg"
-              objectFit={"cover"}
-            />
-            <Text textAlign="center">{cast.name}</Text>
-          </VStack>
+          <React.Fragment key={cast.id}>
+            {cast.profile_path && (
+              <VStack marginX={3}>
+                <Avatar
+                  src={getImageURL(cast.profile_path)}
+                  size="lg"
+                  objectFit={"cover"}
+                />
+                <Text textAlign="center">{cast.name}</Text>
+              </VStack>
+            )}
+          </React.Fragment>
         ))}
       </SimpleGrid>
     </Box>

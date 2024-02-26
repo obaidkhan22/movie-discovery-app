@@ -7,7 +7,6 @@ const MovieGrid = () => {
   const { data, error, isLoading } = useMovies();
   if (isLoading) return <Spinner />;
   if (error) return null;
-  console.log(data);
 
   return (
     <>
