@@ -1,19 +1,23 @@
 import { Movie } from "../entities/FetchResponseMovies";
-import DefinitionItem from "./DefinitionItem";
 import { Heading, Text } from "@chakra-ui/react";
+import DefinitionItem from "./DefinitionItem";
 interface Props {
   movie: Movie;
 }
 const MovieAttributes = ({ movie }: Props) => {
   return (
     <>
-      <DefinitionItem>
-        <Heading textAlign="center" paddingY={2}>
-          {`${movie.title} (${movie.release_date.split("-")[0]})`}
-        </Heading>
+      <Heading textAlign="center" paddingY={2}>
+        {`${movie.title} (${movie.release_date.split("-")[0]})`}
+      </Heading>
+      <Text>{movie.overview}</Text>
+      <DefinitionItem term="Genres">
+        {movie.genres.map((genre) => (
+          <Text key={genre.id}>{genre.name}</Text>
+        ))}
       </DefinitionItem>
-      <DefinitionItem>
-        <Text>{movie.overview}</Text>
+      <DefinitionItem term="Duration">
+        <Text>{movie.runtime} min</Text>
       </DefinitionItem>
     </>
   );

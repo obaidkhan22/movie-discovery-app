@@ -1,3 +1,5 @@
+import { Genre } from "./FetchResponseGenre";
+
 export interface Movie {
   id: number;
   title: string;
@@ -5,6 +7,8 @@ export interface Movie {
   vote_average: number;
   overview: string;
   release_date: string;
+  genres: Genre[];
+  runtime: string;
 }
 
 export interface FetchResponseMovie {
