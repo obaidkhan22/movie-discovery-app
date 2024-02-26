@@ -3,6 +3,7 @@ import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import DefinitionItem from "./DefinitionItem";
 import getDurationByHour from "../services/getDurationByHour";
 import MovieRating from "./MovieRating";
+import MovieTopCasts from "./MovieTopCasts";
 interface Props {
   movie: Movie;
 }
@@ -29,6 +30,7 @@ const MovieAttributes = ({ movie }: Props) => {
           <MovieRating rating={movie.vote_average.toFixed(2)} />
         </DefinitionItem>
       </SimpleGrid>
+      <MovieTopCasts />
     </>
   );
 };
