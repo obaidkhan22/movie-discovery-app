@@ -3,7 +3,6 @@ import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import DefinitionItem from "./DefinitionItem";
 import getDurationByHour from "../services/getDurationByHour";
 import MovieRating from "./MovieRating";
-import MovieTopCasts from "./MovieTopCasts";
 interface Props {
   movie: Movie;
 }
@@ -12,6 +11,9 @@ const MovieAttributes = ({ movie }: Props) => {
     <>
       <Heading textAlign="center" paddingY={2}>
         {`${movie.title} (${movie.release_date.split("-")[0]})`}
+      </Heading>
+      <Heading fontSize={20} color="gray.600">
+        Overview
       </Heading>
       <Text>{movie.overview}</Text>
       <SimpleGrid columns={4}>

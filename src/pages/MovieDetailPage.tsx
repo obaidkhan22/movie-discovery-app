@@ -4,6 +4,7 @@ import MovieAttributes from "../components/MovieAttributes";
 import { SimpleGrid, Image, Box, Spinner } from "@chakra-ui/react";
 import getImageURL from "../services/getImageURL";
 import MovieTopCasts from "../components/MovieTopCasts";
+import MovieRelatedLinks from "../components/MovieRelatedLinks";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -30,6 +31,7 @@ const MovieDetailPage = () => {
         <Box justifySelf={"center"}>
           <MovieAttributes movie={data} />
           <MovieTopCasts movie_id={data.id} />
+          <MovieRelatedLinks movie={data} />
         </Box>
       </SimpleGrid>
     </>

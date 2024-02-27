@@ -10,6 +10,8 @@ export interface Movie {
   genres: Genre[];
   runtime: string;
   original_language: string;
+  homepage: string;
+  imdb_id: string;
 }
 
 export interface FetchResponseMovie {
