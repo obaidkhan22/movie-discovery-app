@@ -6,6 +6,7 @@ import getImageURL from "../services/getImageURL";
 import MovieTopCasts from "../components/MovieTopCasts";
 import MovieRelatedLinks from "../components/MovieRelatedLinks";
 import RecommendedMovies from "../components/RecommendedMovies";
+import MovieTrailer from "../components/MovieTrailer";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -34,6 +35,7 @@ const MovieDetailPage = () => {
           <MovieTopCasts movie_id={data.id} />
           <MovieRelatedLinks movie={data} />
         </Box>
+        <MovieTrailer />
       </SimpleGrid>
       <Box>
         <Heading marginY={7} textAlign="center">

@@ -4,8 +4,9 @@ import { Movie } from "../entities/FetchResponseMovies";
 
 const useMovie = (id: string) => {
   const apiClient = new APIClient<Movie>(`/movie/${id}&`);
+  const int = parseInt(id);
   return useQuery({
-    queryKey: ["movies", id],
+    queryKey: ["movie", { id: int }],
     queryFn: apiClient.getAll,
   });
 };
