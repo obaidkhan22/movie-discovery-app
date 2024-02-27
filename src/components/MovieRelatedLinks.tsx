@@ -5,8 +5,9 @@ import { BiSolidMovie } from "react-icons/bi";
 import { BsGlobe } from "react-icons/bs";
 interface Props {
   movie: Movie;
+  onClick: () => void;
 }
-const MovieRelatedLinks = ({ movie }: Props) => {
+const MovieRelatedLinks = ({ movie, onClick }: Props) => {
   return (
     <HStack>
       <Button rightIcon={<BsGlobe />}>
@@ -21,6 +22,9 @@ const MovieRelatedLinks = ({ movie }: Props) => {
         >
           IMDB
         </Link>
+      </Button>
+      <Button rightIcon={<BiSolidMovie />} onClick={onClick}>
+        Watch Trailer
       </Button>
     </HStack>
   );
