@@ -14,7 +14,7 @@ interface Props {
 }
 const MovieTopCasts = ({ movie_id }: Props) => {
   const { data, error } = useCredits(movie_id!);
-  const slicedArray = data?.cast.slice(0, 10);
+  const slicedArray = data?.cast.slice(0, 9);
   if (error) return null;
   return (
     <Box>
