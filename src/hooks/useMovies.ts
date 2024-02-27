@@ -7,6 +7,7 @@ const useMovies = () => {
   const movieQuery = useMovieQueryStore((s) => s.movieQuery);
   const endpoint = getEndPoint();
   const apiClient = new APIClient<FetchResponseMovie>(endpoint);
+
   return useQuery({
     queryKey: ["movies", movieQuery],
     queryFn: apiClient.getAll,

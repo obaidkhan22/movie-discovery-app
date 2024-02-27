@@ -7,6 +7,8 @@ const getEndPoint = () => {
   if (movieQuery.searchText)
     return `/search/movie?query=${movieQuery.searchText}&page=${movieQuery.page}&
     `;
+  if (movieQuery.category)
+    return `/movie/${movieQuery.category}?page=${movieQuery.page}`;
   return `/discover/movie?page=${movieQuery.page}`;
 };
 
