@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import useMovie from "./../hooks/useMovie";
 import MovieAttributes from "../components/MovieAttributes";
-import { SimpleGrid, Image, Box, Spinner } from "@chakra-ui/react";
+import { SimpleGrid, Image, Box, Spinner, Heading } from "@chakra-ui/react";
 import getImageURL from "../services/getImageURL";
 import MovieTopCasts from "../components/MovieTopCasts";
 import MovieRelatedLinks from "../components/MovieRelatedLinks";
+import RecommendedMovies from "../components/RecommendedMovies";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -34,6 +35,12 @@ const MovieDetailPage = () => {
           <MovieRelatedLinks movie={data} />
         </Box>
       </SimpleGrid>
+      <Box>
+        <Heading marginY={7} textAlign="center">
+          You Might Also Like
+        </Heading>
+        <RecommendedMovies movie_id={id!} />
+      </Box>
     </>
   ) : null;
 };
