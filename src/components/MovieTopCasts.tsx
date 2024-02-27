@@ -22,7 +22,7 @@ const MovieTopCasts = ({ movie_id }: Props) => {
         Top Casts
       </Heading>
       <SimpleGrid
-        columns={{ base: 4, sm: 6, md: 8, lg: 6, xl: 10 }}
+        columns={{ base: 4, sm: 6, md: 8, lg: 6, xl: 9 }}
         paddingY={5}
         spacing={2}
       >
