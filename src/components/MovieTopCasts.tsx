@@ -1,8 +1,9 @@
 import {
   Avatar,
   Box,
+  Grid,
+  GridItem,
   Heading,
-  SimpleGrid,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -14,33 +15,33 @@ interface Props {
 }
 const MovieTopCasts = ({ movie_id }: Props) => {
   const { data, error } = useCredits(movie_id!);
-  const slicedArray = data?.cast.slice(0, 9);
+  const slicedArray = data?.cast.slice(0, 6);
   if (error) return null;
   return (
     <Box>
       <Heading color="gray.600" fontSize={20} marginTop={2}>
         Top Casts
       </Heading>
-      <SimpleGrid
-        columns={{ base: 4, sm: 6, md: 8, lg: 6, xl: 9 }}
-        paddingY={5}
-        spacing={2}
-      >
+      <Grid templateColumns="repeat(6,  1fr)" paddingY={3}>
         {slicedArray?.map((cast) => (
           <React.Fragment key={cast.id}>
             {cast.profile_path && (
-              <VStack marginX={3}>
-                <Avatar
-                  src={getImageURL(cast.profile_path)}
-                  size="lg"
-                  objectFit={"cover"}
-                />
-                <Text textAlign="center">{cast.name}</Text>
-              </VStack>
+              <GridItem justifySelf="start">
+                <VStack>
+                  <Avatar
+                    src={getImageURL(cast.profile_path)}
+                    size="lg"
+                    objectFit={"cover"}
+                  />
+                  <Text textAlign="center" whiteSpace="wrap">
+                    {cast.name}
+                  </Text>
+                </VStack>
+              </GridItem>
             )}
           </React.Fragment>
         ))}
-      </SimpleGrid>
+      </Grid>
     </Box>
   );
 };

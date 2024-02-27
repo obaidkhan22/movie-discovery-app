@@ -16,7 +16,7 @@ const MovieAttributes = ({ movie }: Props) => {
         Overview
       </Heading>
       <Text>{movie.overview}</Text>
-      <SimpleGrid columns={4}>
+      <SimpleGrid columns={{ sm: 3, md: 4, lg: 4 }}>
         <DefinitionItem term="Genres">
           {movie.genres.map((genre) => (
             <Text key={genre.id}>{genre.name}</Text>
