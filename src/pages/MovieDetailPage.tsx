@@ -7,10 +7,8 @@ import MovieTopCasts from "../components/MovieTopCasts";
 import MovieRelatedLinks from "../components/MovieRelatedLinks";
 import RecommendedMovies from "../components/RecommendedMovies";
 import MovieTrailer from "../components/MovieTrailer";
-import { useState } from "react";
 
 const MovieDetailPage = () => {
-  const [open, setOpen] = useState(false);
   const { id } = useParams();
   const { data, isLoading } = useMovie(id!);
   if (isLoading) return <Spinner />;
@@ -35,10 +33,10 @@ const MovieDetailPage = () => {
         <Box justifySelf={"center"}>
           <MovieAttributes movie={data} />
           <MovieTopCasts movie_id={data.id} />
-          <MovieRelatedLinks movie={data} onClick={() => setOpen(true)} />
+          <MovieRelatedLinks movie={data} />
         </Box>
       </SimpleGrid>
-      <MovieTrailer open={open} />
+      <MovieTrailer />
       <Box>
         <Heading marginY={7} textAlign="center">
           You Might Also Like
