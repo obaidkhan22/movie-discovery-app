@@ -12,6 +12,7 @@ export interface Movie {
   original_language: string;
   homepage: string;
   imdb_id: string;
+  backdrop_path: string;
 }
 
 export interface FetchResponseMovie {
