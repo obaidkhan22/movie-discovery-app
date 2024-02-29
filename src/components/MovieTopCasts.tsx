@@ -10,6 +10,7 @@ import {
 import useCredits from "../hooks/useCredits";
 import getImageURL from "../services/getImageURL";
 import React from "react";
+import { Link } from "react-router-dom";
 interface Props {
   movie_id: number;
 }
@@ -28,11 +29,13 @@ const MovieTopCasts = ({ movie_id }: Props) => {
             {cast.profile_path && (
               <GridItem justifySelf="start">
                 <VStack>
-                  <Avatar
-                    src={getImageURL(cast.profile_path)}
-                    size="lg"
-                    objectFit={"cover"}
-                  />
+                  <Link to={`/person/${cast.id}`}>
+                    <Avatar
+                      src={getImageURL(cast.profile_path)}
+                      size="lg"
+                      objectFit={"cover"}
+                    />
+                  </Link>
                   <Text textAlign="center" whiteSpace="wrap">
                     {cast.name}
                   </Text>
