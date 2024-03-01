@@ -19,9 +19,9 @@ const GenresListDrawer = () => {
   let category = useMovieQueryStore((s) => s.movieQuery.category);
   const menuButtonRef = useRef(null);
   const { onClose } = useDisclosure();
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   useEffect(() => {
-    setOpen(!isOpen);
+    setOpen(false);
   }, [genreId, category]);
   return (
     <>
