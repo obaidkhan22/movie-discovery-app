@@ -2,13 +2,11 @@ import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 import Pagination from "./Pagination";
-import FeatureMovie from "./FeatureMovie/FeatureMovie";
 
 const MovieGrid = () => {
-  const { data, error, isLoading } = useMovies();
+  const { data, isLoading } = useMovies();
   const movies = data?.results.slice(1);
   if (isLoading) return <Spinner />;
-  if (error) return null;
 
   return (
     <>
