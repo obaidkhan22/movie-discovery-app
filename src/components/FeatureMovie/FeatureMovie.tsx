@@ -1,4 +1,4 @@
-import { Box, Card, Heading, Text } from "@chakra-ui/react";
+import { Box, Card, Heading, Text, Image } from "@chakra-ui/react";
 import { Movie } from "../../entities/FetchResponseMovies";
 import getImageURL from "../../services/getImageURL";
 import "./FeatureMovie.css";
@@ -11,10 +11,12 @@ const FeatureMovie = ({ movie }: Props) => {
       marginBottom={10}
       className="feature-movie-card"
       overflow="hidden"
-      position="relative"
       brightness={0.7}
     >
-      <img src={getImageURL(movie.backdrop_path)} height={500} width="100%" />
+      <Image
+        src={getImageURL(movie.backdrop_path)}
+        height={{ md: "300px", lg: "400px", xl: "700px" }}
+      />
       <Box position="absolute" bottom={2} padding={5}>
         <Heading marginY={2}>{movie.title}</Heading>
         <Text>{movie.overview}</Text>
