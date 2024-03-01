@@ -12,7 +12,7 @@ import getImageURL from "../services/getImageURL";
 import React from "react";
 import { Link } from "react-router-dom";
 interface Props {
-  movie_id: number;
+  movie_id: string;
 }
 const MovieTopCasts = ({ movie_id }: Props) => {
   const { data, error } = useCredits(movie_id!);

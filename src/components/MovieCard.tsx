@@ -20,9 +20,7 @@ const MovieCard = ({ movie }: Props) => {
       <CardBody>
         <HStack justifyContent="space-between">
           <Heading fontSize={20}>
-            <Link to={`/movie/${movie.id} ${window.scrollTo(0, 0)}`}>
-              {movie.title}
-            </Link>
+            <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
           </Heading>
           <MovieRating rating={movie.vote_average.toFixed(2)} />
         </HStack>
