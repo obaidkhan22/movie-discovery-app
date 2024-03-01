@@ -1,12 +1,13 @@
-import { Button, Heading, Link, List, ListItem } from "@chakra-ui/react";
+import { Heading, Link, List, ListItem } from "@chakra-ui/react";
 import useMovieQueryStore from "../hooks/store";
-
+import { useNavigate } from "react-router-dom";
 const categories = [
   { value: "popular", categoray: "Popular" },
   { value: "top_rated", categoray: "Top Rated" },
   { value: "upcoming", categoray: "Upcoming" },
 ];
 const MovieCategories = () => {
+  const navigate = useNavigate();
   const setCategory = useMovieQueryStore((s) => s.setCategory);
   const category = useMovieQueryStore((s) => s.movieQuery.category);
   const selectedCategory = categories.find((c) => c.value === category);
@@ -22,7 +23,10 @@ const MovieCategories = () => {
               fontWeight={
                 selectedCategory?.value === c.value ? "bold" : "normal"
               }
-              onClick={() => setCategory(c.value)}
+              onClick={() => {
+                setCategory(c.value);
+                navigate("/");
+              }}
             >
               {c.categoray}
             </Link>
