@@ -7,7 +7,7 @@ const MovieHeading = () => {
   const movieQuery = useMovieQueryStore((s) => s.movieQuery);
   const selectedGenre = useGenre(movieQuery.genreId);
   const category = useMovieQueryStore((s) => s.movieQuery.category);
-  const capitalizedWord = getCapitalizedWord(movieQuery.searchText || category);
+  const capitalizedWord = getCapitalizedWord(category || "");
   return (
     <Heading color="gray.400" marginBottom={5}>{`${selectedGenre?.name || ""} ${
       capitalizedWord || "Movies"
