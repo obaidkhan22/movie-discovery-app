@@ -13,9 +13,9 @@ const router = createBrowserRouter([
       { index: true, element: <MainContent /> },
       { path: "/movie/:id", element: <MovieDetailPage /> },
       { path: "/person/:id", element: <ActorDetailPage /> },
-      { path: "/movies/:id", element: <SearchedMovies /> },
     ],
   },
+  { path: "/movies/:id", element: <SearchedMovies /> },
 ]);
 
 export default router;

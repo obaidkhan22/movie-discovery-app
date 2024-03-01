@@ -1,8 +1,9 @@
-import { Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import MovieCard from "../components/MovieCard";
 import useSearchMovies from "../hooks/useSearchMovies";
 import useMovieQueryStore from "../hooks/store";
 import getCapitalizedWord from "./../services/getCapitalizedWord";
+import NavBar from "../components/NavBar";
 
 const SearchedMovies = () => {
   const { data, isLoading } = useSearchMovies();
@@ -12,12 +13,15 @@ const SearchedMovies = () => {
 
   return (
     <>
-      <Heading marginY={4}>{getCapitalizedWord(searchText)}</Heading>
-      <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }} spacing={7}>
-        {data?.results.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </SimpleGrid>
+      <NavBar />
+      <Box padding={5}>
+        <Heading paddingBottom={8}>{getCapitalizedWord(searchText)}</Heading>
+        <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }} spacing={7}>
+          {data?.results.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </SimpleGrid>
+      </Box>
     </>
   );
 };

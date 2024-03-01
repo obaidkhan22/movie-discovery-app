@@ -5,6 +5,7 @@ import useMovieQueryStore from "../../hooks/store";
 
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
+import getURLSlug from "../../services/getURLSlug";
 
 const SearchInput = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const SearchInput = () => {
         event.preventDefault();
         if (ref.current) {
           setSearchText(ref.current.value);
-          navigate(`/movies/${ref.current.value}`);
+          navigate(`/movies/${getURLSlug(ref.current.value)}`);
 
           ref.current.value = "";
         }
