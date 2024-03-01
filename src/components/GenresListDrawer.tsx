@@ -1,23 +1,19 @@
 import {
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  Input,
-  DrawerFooter,
   Button,
-  useDisclosure,
-  Icon,
+  Drawer,
+  DrawerContent,
   HStack,
+  Icon,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-
 import { FiMenu } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
+import useMovieQueryStore from "../hooks/store";
+import DarkModeSwitch from "./DarkModeSwitch";
 import GenresList from "./GenresList";
 import MovieCategories from "./MovieCategories";
-import useMovieQueryStore from "../hooks/store";
+import UserSignUp from "./UserSignUp";
 const GenresListDrawer = () => {
   const genreId = useMovieQueryStore((s) => s.movieQuery.genreId);
   const category = useMovieQueryStore((s) => s.movieQuery.category);
@@ -45,6 +41,22 @@ const GenresListDrawer = () => {
         finalFocusRef={menuButtonRef}
       >
         <DrawerContent paddingX={7} overflow="scroll" overflowX="hidden">
+          <HStack paddingY={3} justifyContent="space-between">
+            <DarkModeSwitch />
+            <UserSignUp />
+          </HStack>
+          <Icon
+            color={"gray.400"}
+            cursor="pointer"
+            onClick={() => setOpen(false)}
+            as={MdClose}
+            marginY={5}
+            boxSize={10}
+            position={"absolute"}
+            right={8}
+            top={14}
+          />
+
           <MovieCategories />
           <GenresList />
         </DrawerContent>
