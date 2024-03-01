@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";
+import "./index.css";
 import theme from "./../theme";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
