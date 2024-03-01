@@ -2,6 +2,7 @@ import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 import Pagination from "./Pagination";
+import Grid from "../Common/Grid";
 
 const MovieGrid = () => {
   const { data, isLoading } = useMovies();
@@ -10,15 +11,11 @@ const MovieGrid = () => {
 
   return (
     <>
-      <SimpleGrid
-        columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }}
-        spacing={7}
-        padding={{ base: "20px" }}
-      >
+      <Grid>
         {movies?.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
-      </SimpleGrid>
+      </Grid>
       {data?.total_results! < 10 ? null : <Pagination />}
     </>
   );

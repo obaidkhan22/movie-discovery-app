@@ -4,6 +4,7 @@ import useSearchMovies from "../hooks/useSearchMovies";
 import useMovieQueryStore from "../hooks/store";
 import getCapitalizedWord from "./../services/getCapitalizedWord";
 import NavBar from "../components/NavBar";
+import Grid from "../Common/Grid";
 
 const SearchedMovies = () => {
   const { data, isLoading } = useSearchMovies();
@@ -14,13 +15,13 @@ const SearchedMovies = () => {
   return (
     <>
       <NavBar />
-      <Box padding={5}>
-        <Heading paddingBottom={8}>{getCapitalizedWord(searchText)}</Heading>
-        <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }} spacing={7}>
+      <Box paddingX={3}>
+        <Heading padding={4}>{getCapitalizedWord(searchText)}</Heading>
+        <Grid>
           {data?.results.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
-        </SimpleGrid>
+        </Grid>
       </Box>
     </>
   );
