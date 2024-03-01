@@ -26,11 +26,12 @@ const GenresListDrawer = () => {
   return (
     <>
       <Button
+        boxSize={10}
         ref={menuButtonRef}
         onClick={() => setOpen(!isOpen)}
         display={{ sm: "flex", md: "none" }}
       >
-        <Icon padding={2} as={FiMenu} boxSize="50px" />
+        <Icon padding={2} as={FiMenu} boxSize="45px" />
       </Button>
 
       <Drawer
