@@ -1,4 +1,4 @@
-import { HStack, Image, Stack } from "@chakra-ui/react";
+import { HStack, Image, Show, Stack } from "@chakra-ui/react";
 import logo from "../images/logo.png";
 import DarkModeSwitch from "./DarkModeSwitch";
 import UserSignUp from "./UserSignUp";
@@ -9,16 +9,18 @@ const NavBar = () => {
     <nav>
       <HStack
         justifyContent="space-between"
-        paddingX={{ sm: "15px", md: "10px" }}
-        paddingTop={{ sm: "15px" }}
+        paddingX={{ base: "15px", md: "10px" }}
+        paddingTop={{ base: "15px" }}
       >
         <GenresListDrawer />
         <Image src={logo} boxSize="60px" />
         <SearchInput />
-        <Stack direction={"row"} display={{ sm: "none", md: "inline-flex" }}>
-          <DarkModeSwitch />
-          <UserSignUp />
-        </Stack>
+        <Show above="md">
+          <Stack direction={"row"}>
+            <DarkModeSwitch />
+            <UserSignUp />
+          </Stack>
+        </Show>
       </HStack>
     </nav>
   );

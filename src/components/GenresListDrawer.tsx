@@ -29,9 +29,9 @@ const GenresListDrawer = () => {
         boxSize={10}
         ref={menuButtonRef}
         onClick={() => setOpen(!isOpen)}
-        display={{ sm: "flex", md: "none" }}
+        display={{ base: "flex", md: "none" }}
       >
-        <Icon padding={2} as={FiMenu} boxSize="45px" />
+        <Icon padding={2} as={FiMenu} boxSize={10} />
       </Button>
 
       <Drawer
