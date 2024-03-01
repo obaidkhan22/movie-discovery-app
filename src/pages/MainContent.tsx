@@ -8,8 +8,8 @@ const MainContent = () => {
   const movie = data?.results[0];
   return (
     <>
-      {movie && <FeatureMovie movie={movie} />}
       <MovieHeading />
+      {movie && <FeatureMovie movie={movie} />}
       <MovieGrid />
     </>
   );
