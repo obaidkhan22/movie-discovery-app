@@ -10,7 +10,7 @@ const MovieCard = ({ movie }: Props) => {
   return (
     <Card
       _hover={{
-        transform: "scale(1.07)",
+        transform: { base: "scale(1.03)", md: "scale(1.07)" },
         transition: "transform .2s ease-in",
       }}
       borderRadius={10}

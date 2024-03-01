@@ -10,7 +10,11 @@ const MovieGrid = () => {
 
   return (
     <>
-      <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }} spacing={7}>
+      <SimpleGrid
+        columns={{ sm: 1, md: 3, lg: 4, "2xl": 5 }}
+        spacing={7}
+        padding={{ base: "20px" }}
+      >
         {movies?.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
