@@ -15,7 +15,7 @@ const FeatureMovie = ({ movie }: Props) => {
     >
       <Image
         src={getImageURL(movie.backdrop_path)}
-        height={{ md: "300px", lg: "500px", xl: "600px", "2xl": "650px" }}
+        height={{ md: "300px", lg: "500px", xl: "600px", "2xl": "780px" }}
       />
       <Box position="absolute" bottom={2} padding={5}>
         <Heading marginY={2}>{movie.title}</Heading>

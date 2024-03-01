@@ -16,10 +16,10 @@ import MovieCategories from "./MovieCategories";
 import UserSignUp from "./UserSignUp";
 const GenresListDrawer = () => {
   const genreId = useMovieQueryStore((s) => s.movieQuery.genreId);
-  const category = useMovieQueryStore((s) => s.movieQuery.category);
+  let category = useMovieQueryStore((s) => s.movieQuery.category);
   const menuButtonRef = useRef(null);
   const { onClose } = useDisclosure();
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
   useEffect(() => {
     setOpen(!isOpen);
   }, [genreId, category]);
