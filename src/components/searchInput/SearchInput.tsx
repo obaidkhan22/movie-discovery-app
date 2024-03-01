@@ -16,7 +16,7 @@ const SearchInput = () => {
         event.preventDefault();
         if (ref.current) {
           setSearchText(ref.current.value);
-          navigate("/");
+          navigate(`/movies/${ref.current.value}`);
 
           ref.current.value = "";
         }
