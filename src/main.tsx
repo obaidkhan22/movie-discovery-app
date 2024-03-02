@@ -9,6 +9,9 @@ import theme from "./../theme";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import router from "./pages/router";
 const queryClient = new QueryClient();
+window.onpopstate = (Event) => {
+  console.log(Event);
+};
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

@@ -18,7 +18,7 @@ const SearchInput = () => {
         if (ref.current) {
           setSearchText(ref.current.value);
           navigate(`/movies/${getURLSlug(ref.current.value)}`);
-
+          localStorage.setItem("search", ref.current.value);
           ref.current.value = "";
         }
       }}

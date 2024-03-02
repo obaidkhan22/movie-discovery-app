@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
 import MovieCard from "../components/MovieCard";
 import useSearchMovies from "../hooks/useSearchMovies";
 import useMovieQueryStore from "../hooks/store";
@@ -7,11 +7,9 @@ import NavBar from "../components/NavBar";
 import Grid from "../Common/Grid";
 
 const SearchedMovies = () => {
-  const { data, isLoading } = useSearchMovies();
   const searchText = useMovieQueryStore((s) => s.movieQuery.searchText);
+  const { data, isLoading } = useSearchMovies();
   if (isLoading) return <Spinner />;
-  console.log(data);
-
   return (
     <>
       <NavBar />

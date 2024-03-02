@@ -23,7 +23,7 @@ const useMovieQueryStore = create<MovieQueryStore>((set) => ({
       movieQuery: { genreId, page: 1 },
     })),
   setSearchText: (searchText) =>
-    set((store) => ({ movieQuery: { ...store.movieQuery, searchText } })),
+    set(() => ({ movieQuery: { searchText, page: 1 } })),
   setCategory: (category) =>
     set(() => ({
       movieQuery: { category, page: 1 },

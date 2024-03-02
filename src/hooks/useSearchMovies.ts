@@ -9,6 +9,7 @@ const useSearchMovies = () => {
   const apiClient = new APIClient<FetchResponseMovie>(
     `/search/movie?query=${searchText}&page=${page}&`
   );
+
   return useQuery({
     queryKey: ["movies", searchText],
     queryFn: apiClient.getAll,
